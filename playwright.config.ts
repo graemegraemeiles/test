@@ -1,13 +1,13 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  timeout: 300_000,
+  timeout: 600_000,
   testDir: './src',
   testMatch: 'playwright-script.ts',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: 0,
-  workers: 10,
+  workers: 40,
   reporter: 'html',
   use: {
     trace: 'on-first-retry',

@@ -232,6 +232,125 @@ test('simulate user interaction 10', async ({ page }, testInfo) => {
   await simulateUserInteraction(page, testInfo);
 });
 
+test('simulate user interaction 11', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 12', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 13', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 14', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 15', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 16', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 17', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 18', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 19', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 20', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 21', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 22', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 23', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 24', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 25', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 26', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 27', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 28', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 29', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 30', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 31', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 32', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 33', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 34', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 35', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 36', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 37', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 38', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 39', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
+
+test('simulate user interaction 40', async ({ page }, testInfo) => {
+  await simulateUserInteraction(page, testInfo);
+});
 // test.skip('capture browser detection screenshots', async ({ page }, testInfo) => {
 //   await page.goto('https://www.whatismybrowser.com/');
 //   const browserHome = await page.screenshot({
