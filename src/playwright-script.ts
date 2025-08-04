@@ -9,26 +9,26 @@ async function randomMouseMove(page: Page) {
   await page.mouse.wheel(0, y);
 }
 
-async function scenario1(page: Page, testInfo: TestInfo) {
-  console.log('Running scenario 1');
-  await randomMouseMove(page);
-  await page.waitForTimeout(randomWait());
-  await randomMouseMove(page);
+// async function scenario1(page: Page, testInfo: TestInfo) {
+//   console.log('Running scenario 1');
+//   await randomMouseMove(page);
+//   await page.waitForTimeout(randomWait());
+//   await randomMouseMove(page);
 
-  if (Math.random() < 0.2) {
-    try {
-      console.log('Clicking next-btn');
-      await randomMouseMove(page);
-      await page.locator('[data-test-id="next-btn"]').click();
-      await randomMouseMove(page);
-    } catch (e) {
-      console.error('Failed to click next-btn:', e);
-    }
-  }
-  await randomMouseMove(page);
-  await page.waitForTimeout(randomWait());
-  await randomMouseMove(page);
-}
+//   if (Math.random() < 0.2) {
+//     try {
+//       console.log('Clicking next-btn');
+//       await randomMouseMove(page);
+//       await page.locator('[data-test-id="next-btn"]').click();
+//       await randomMouseMove(page);
+//     } catch (e) {
+//       console.error('Failed to click next-btn:', e);
+//     }
+//   }
+//   await randomMouseMove(page);
+//   await page.waitForTimeout(randomWait());
+//   await randomMouseMove(page);
+// }
 
 async function scenario2(page: Page, testInfo: TestInfo) {
   console.log('Running scenario 2');
@@ -51,14 +51,23 @@ async function scenario2(page: Page, testInfo: TestInfo) {
   await randomMouseMove(page);
 
   if (true || Math.random() < 0.8) {
-    const ads = ['vertical-ad-1', 'vertical-ad-2', 'vertical-ad-3', 'vertical-ad-4'];
+    const ads = [
+      'vertical-ad-1',
+      'vertical-ad-2',
+      'vertical-ad-3',
+      'vertical-ad-4',
+      'horizontal-ad-3',
+      'horizontal-ad-4',
+    ];
     const randomAd = ads[Math.floor(Math.random() * ads.length)];
     try {
       await randomMouseMove(page);
       console.log(`Clicking vertical-ad: ${randomAd}`);
       await randomMouseMove(page);
 
-      await page.locator(`[data-test-id="${randomAd}"]`).click();
+      await page.locator(`[id="${randomAd}"]`).first().scrollIntoViewIfNeeded();
+      await page.locator(`[id="${randomAd}"]`).first().hover();
+      await page.locator(`[id="${randomAd}"]`).first().click();
     } catch (e) {
       console.error(`Failed to click ${randomAd}:`, e);
     }
@@ -102,14 +111,28 @@ async function scenario3(page: Page, testInfo: TestInfo) {
   await randomMouseMove(page);
 
   if (true || Math.random() < 0.8) {
-    const videoAds = ['video-ad-1', 'video-ad-2', 'video-ad-3'];
+    const videoAds = [
+      'video-ad-1',
+      'video-ad-2',
+      'video-ad-3',
+      'video-ad-4',
+      'video-ad-5',
+      'video-ad-6',
+      'video-ad-7',
+      'video-ad-8',
+      'video-ad-9',
+      'video-ad-10',
+    ];
     const randomVideoAd = videoAds[Math.floor(Math.random() * videoAds.length)];
     try {
       await randomMouseMove(page);
       await randomMouseMove(page);
 
       console.log(`Clicking video-ad: ${randomVideoAd}`);
-      await page.locator(`[data-test-id="${randomVideoAd}"]`).click();
+      await page.locator(`[id="${randomVideoAd}"]`).first().scrollIntoViewIfNeeded();
+      await page.locator(`[id="${randomVideoAd}"]`).first().hover();
+      await page.locator(`[id="${randomVideoAd}"]`).first().click();
+
       await randomMouseMove(page);
     } catch (e) {
       console.error(`Failed to click ${randomVideoAd}:`, e);
