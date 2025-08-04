@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  timeout: 600_000,
+  timeout: 1200_000,
   testDir: './src',
   testMatch: 'playwright-script.ts',
   fullyParallel: true,
