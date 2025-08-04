@@ -8,6 +8,14 @@ on:
 jobs:
   run-script:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [1, 2, 3, 4]
+        shardTotal: [4]
+    container:
+      image: mcr.microsoft.com/playwright:v1.48.1-jammy
+      options: --user 1001
     steps:
       - name: Log IP address
         run: echo `curl ipinfo.io/ip`
@@ -20,10 +28,10 @@ jobs:
       - name: Install Playwright
         run: npx playwright install --with-deps chromium
       - name: Run Playwright script
-        run: npm run start
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
-        with:
-          name: playwright-report-1
-          path: playwright-report/
-          retention-days: 7
+        run: npm run start -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      # - uses: actions/upload-artifact@v4
+      #   if: ${{ !cancelled() }}
+      #   with:
+      #     name: playwright-report-1
+      #     path: playwright-report/
+      #     retention-days: 7
