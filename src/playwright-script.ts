@@ -54,9 +54,10 @@ async function scenario2(page: Page, testInfo: TestInfo) {
     const ads = [
       'vertical-ad-1',
       'vertical-ad-2',
-      'vertical-ad-3',
-      'vertical-ad-4',
+      // 'vertical-ad-3',
+      // 'vertical-ad-4',
       'horizontal-ad-3',
+      'horizontal-ad-2',
     ];
     const randomAd = ads[Math.floor(Math.random() * ads.length)];
     try {
@@ -65,8 +66,10 @@ async function scenario2(page: Page, testInfo: TestInfo) {
       await randomMouseMove(page);
 
       await page.locator(`[id="${randomAd}"]`).first().scrollIntoViewIfNeeded();
-      await page.locator(`[id="${randomAd}"]`).first().hover();
-      await page.locator(`[id="${randomAd}"]`).first().click();
+      // await page.locator(`[id="${randomAd}"]`).first().hover();
+      try {
+        await page.locator(`[id="${randomAd}"]`).first().click({ timeout: 30_000 });
+      } catch {}
     } catch (e) {
       console.error(`Failed to click ${randomAd}:`, e);
     }
@@ -94,7 +97,14 @@ async function scenario3(page: Page, testInfo: TestInfo) {
     await randomMouseMove(page);
   }
 
-  const videos = ['video-card-2', 'video-card-6', 'video-card-8', 'video-card-10'];
+  const videos = [
+    'video-card-1',
+    'video-card-2',
+    'video-card-5',
+    'video-card-6',
+    'video-card-9',
+    'video-card-10',
+  ];
   const randomVideo = videos[Math.floor(Math.random() * videos.length)];
   try {
     console.log(`Clicking video-card: ${randomVideo}`);
@@ -113,14 +123,14 @@ async function scenario3(page: Page, testInfo: TestInfo) {
     const videoAds = [
       'video-ad-1',
       'video-ad-2',
-      'video-ad-3',
-      'video-ad-4',
-      'video-ad-5',
-      'video-ad-6',
-      'video-ad-7',
-      'video-ad-8',
-      'video-ad-9',
-      'video-ad-10',
+      // 'video-ad-3',
+      // 'video-ad-4',
+      // 'video-ad-5',
+      // 'video-ad-6',
+      // 'video-ad-7',
+      // 'video-ad-8',
+      // 'video-ad-9',
+      // 'video-ad-10',
     ];
     const randomVideoAd = videoAds[Math.floor(Math.random() * videoAds.length)];
     try {
@@ -130,8 +140,9 @@ async function scenario3(page: Page, testInfo: TestInfo) {
       console.log(`Clicking video-ad: ${randomVideoAd}`);
       await page.locator(`[id="${randomVideoAd}"]`).first().scrollIntoViewIfNeeded();
       await page.locator(`[id="${randomVideoAd}"]`).first().hover();
-      await page.locator(`[id="${randomVideoAd}"]`).first().click();
-
+      try {
+        await page.locator(`[id="${randomVideoAd}"]`).first().click({ timeout: 30_000 });
+      } catch {}
       await randomMouseMove(page);
     } catch (e) {
       console.error(`Failed to click ${randomVideoAd}:`, e);
