@@ -57,7 +57,6 @@ async function scenario2(page: Page, testInfo: TestInfo) {
       'vertical-ad-3',
       'vertical-ad-4',
       'horizontal-ad-3',
-      'horizontal-ad-4',
     ];
     const randomAd = ads[Math.floor(Math.random() * ads.length)];
     try {

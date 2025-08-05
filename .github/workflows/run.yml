@@ -2,7 +2,7 @@ name: Run
 
 on:
   schedule:
-    - cron: '*/23 * * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -13,9 +13,6 @@ jobs:
       matrix:
         shardIndex: [1, 2, 3, 4]
         shardTotal: [4]
-    container:
-      image: mcr.microsoft.com/playwright:v1.48.1-jammy
-      options: --user 1001
     steps:
       - name: Log IP address
         run: echo `curl ipinfo.io/ip`
