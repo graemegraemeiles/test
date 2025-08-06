@@ -8,11 +8,12 @@ on:
 jobs:
   run-script:
     runs-on: ubuntu-latest
+    timeout-minutes: 14
     strategy:
       fail-fast: false
-      # matrix:
-      #   shardIndex: [1, 2, 3, 4]
-      #   shardTotal: [4]
+      matrix:
+        shardIndex: [1, 2, 3, 4]
+        shardTotal: [4]
     steps:
       - name: Log IP address
         run: echo `curl ipinfo.io/ip`
@@ -46,5 +47,5 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           name: playwright-report-1
-          path: stealth.png
+          path: screenshots/
           retention-days: 7
