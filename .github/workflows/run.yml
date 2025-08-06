@@ -25,16 +25,23 @@ jobs:
       - name: Install Playwright
         run: npx playwright install --with-deps chromium
 
-      - name: Install Xvfb
-        run: sudo apt-get install -y xvfb
+      # - name: Install Xvfb
+      #   run: sudo apt-get install -y xvfb
 
       # - name: Start Xvfb
       #   run: Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
       # - name: Set DISPLAY environment variable
       #   run: export DISPLAY=:99
-      - name: Run Playwright script
-        run: xvfb-run --auto-servernum -- DEBUG=playwright-extra*,puppeteer-extra* node src/script.cjs
-        # run: npm run start -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      - name: Setup Xvfb
+        uses: coactions/setup-xvfb@v1
+        with:
+          run: node src/script.cjs
+          working-directory: ./
+          # Optional: Specify Xvfb arguments if needed
+          xvfb-args: '-screen 0 1024x768x24'
+      # - name: Run Playwright script
+      #   run: xvfb-run --auto-servernum -- DEBUG=playwright-extra*,puppeteer-extra* node src/script.cjs
+      # run: npm run start -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
