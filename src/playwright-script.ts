@@ -54,10 +54,11 @@ async function scenario2(page: Page, testInfo: TestInfo) {
     const ads = [
       'vertical-ad-1',
       'vertical-ad-2',
-      // 'vertical-ad-3',
-      // 'vertical-ad-4',
+      'vertical-ad-3',
+      'vertical-ad-4',
       'horizontal-ad-3',
       'horizontal-ad-2',
+      'horizontal-ad-1',
     ];
     const randomAd = ads[Math.floor(Math.random() * ads.length)];
     try {
@@ -66,7 +67,7 @@ async function scenario2(page: Page, testInfo: TestInfo) {
       await randomMouseMove(page);
 
       await page.locator(`[id="${randomAd}"]`).first().scrollIntoViewIfNeeded();
-      // await page.locator(`[id="${randomAd}"]`).first().hover();
+      await page.locator(`[id="${randomAd}"]`).first().hover();
       try {
         await page.locator(`[id="${randomAd}"]`).first().click({ timeout: 30_000 });
       } catch {}
@@ -123,10 +124,10 @@ async function scenario3(page: Page, testInfo: TestInfo) {
     const videoAds = [
       'video-ad-1',
       'video-ad-2',
-      // 'video-ad-3',
-      // 'video-ad-4',
-      // 'video-ad-5',
-      // 'video-ad-6',
+      'video-ad-3',
+      'video-ad-4',
+      'video-ad-5',
+      'video-ad-6',
       // 'video-ad-7',
       // 'video-ad-8',
       // 'video-ad-9',
