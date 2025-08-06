@@ -28,14 +28,12 @@ jobs:
       - name: Install Xvfb
         run: sudo apt-get install -y xvfb
 
-      - name: Start Xvfb
-        run: Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-
-      - name: Set DISPLAY environment variable
-        run: export DISPLAY=:99
-
+      # - name: Start Xvfb
+      #   run: Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+      # - name: Set DISPLAY environment variable
+      #   run: export DISPLAY=:99
       - name: Run Playwright script
-        run: DEBUG=playwright-extra*,puppeteer-extra* node src/script.cjs
+        run: xvfb-run --auto-servernum -- DEBUG=playwright-extra*,puppeteer-extra* node src/script.cjs
         # run: npm run start -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
