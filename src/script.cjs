@@ -66,6 +66,7 @@ async function scenario2(page) {
       'vertical-ad-3',
       'vertical-ad-4',
       'horizontal-ad-3',
+      'horizontal-ad-4',
       'horizontal-ad-2',
       'horizontal-ad-1',
     ];
@@ -156,6 +157,8 @@ async function scenario3(page) {
       'video-ad-4',
       'video-ad-5',
       'video-ad-6',
+      'video-ad-7',
+      'video-ad-8',
     ];
     const randomVideoAd = videoAds[Math.floor(Math.random() * videoAds.length)];
     try {
@@ -332,16 +335,20 @@ async function job() {
   });
 }
 
-job();
-job();
-job();
-job();
-job();
-job();
-job();
-job();
-job();
-job();
+try {
+  job();
+  job();
+  job();
+  job();
+  job();
+  job();
+  job();
+  job();
+  job();
+  job();
+} catch (e) {
+  console.error(e);
+}
 
 // chromium.launch({ headless: false }).then(async (browser) => {
 //   // Listen for new pages (tabs) being opened
