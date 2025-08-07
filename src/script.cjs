@@ -61,14 +61,14 @@ async function scenario2(page) {
 
   if (true || Math.random() < 0.8) {
     const ads = [
-      'vertical-ad-1',
-      'vertical-ad-2',
-      'vertical-ad-3',
-      'vertical-ad-4',
-      'horizontal-ad-3',
+      // 'vertical-ad-1',
+      // 'vertical-ad-2',
+      // 'vertical-ad-3',
+      // 'vertical-ad-4',
+      // 'horizontal-ad-3',
       'horizontal-ad-4',
-      'horizontal-ad-2',
-      'horizontal-ad-1',
+      // 'horizontal-ad-2',
+      // 'horizontal-ad-1',
     ];
     const randomAd = ads[Math.floor(Math.random() * ads.length)];
     try {
@@ -151,14 +151,14 @@ async function scenario3(page) {
 
   if (true || Math.random() < 0.8) {
     const videoAds = [
-      'video-ad-1',
-      'video-ad-2',
-      'video-ad-3',
-      'video-ad-4',
-      'video-ad-5',
-      'video-ad-6',
+      // 'video-ad-1',
+      // 'video-ad-2',
+      // 'video-ad-3',
+      // 'video-ad-4',
+      // 'video-ad-5',
+      // 'video-ad-6',
       'video-ad-7',
-      'video-ad-8',
+      // 'video-ad-8',
     ];
     const randomVideoAd = videoAds[Math.floor(Math.random() * videoAds.length)];
     try {
@@ -337,15 +337,15 @@ async function job() {
 
 try {
   job();
-  job();
-  job();
-  job();
-  job();
-  job();
-  job();
-  job();
-  job();
-  job();
+  // job();
+  // job();
+  // job();
+  // job();
+  // job();
+  // job();
+  // job();
+  // job();
+  // job();
 } catch (e) {
   console.error(e);
 }
